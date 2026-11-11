@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Posmart Homecenter · Catálogo mayorista Pavco</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#eef2f6;--sf:#fff;--ink:#13202b;--mu:#5a6977;--ln:#d8dfe6;--navy:#0b2a4a;--agua:#1b6db3;--desague:#5c6873;--luz:#cf6a05;--cal:#d4352b;--ac:var(--agua);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0d1419;--sf:#151f27;--ink:#e7edf2;--mu:#92a0ad;--ln:#26333f;--agua:#4f9fe0;--desague:#9ba7b2;--luz:#f19a45;--cal:#f0695e}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0d1419;--sf:#151f27;--ink:#e7edf2;--mu:#92a0ad;--ln:#26333f;--agua:#4f9fe0;--desague:#9ba7b2;--luz:#f19a45;--cal:#f0695e}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.4 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--navy)}
+body[data-c="desague"]{--ac:var(--desague)}body[data-c="caliente"]{--ac:var(--cal)}body[data-c="luz"]{--ac:var(--luz)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+.w{max-width:1100px;margin:0 auto;padding:0 14px}
+.hd{background:var(--navy);color:#fff;padding:16px 0 24px;position:relative}.hb{display:flex;justify-content:space-between;align-items:center;gap:12px}.lg1{height:48px;width:auto;display:block}.chip{background:#fff;border-radius:10px;padding:6px 12px;display:flex}.chip img{height:40px;width:auto;display:block}.ht{margin-top:16px}.ft{padding:6px 14px 130px;color:var(--mu);font-size:.85rem;text-align:center}
+.hd::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,#1b6db3 33.3%,#8c97a2 33.3% 66.6%,#e8791a 66.6%)}
+.hd h1{margin:0;font-size:1.9rem;font-weight:800;letter-spacing:-.01em}
+.hd p{margin:4px 0 0;color:#b9c8d8;font-size:.92rem}
+.ctrl{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);padding:10px 0 2px;border-bottom:1px solid var(--ln)}
+nav{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+nav button{border:2px solid var(--ln);background:var(--sf);border-radius:12px;padding:8px 2px;font-weight:800;font-size:.84rem;cursor:pointer;line-height:1.2}
+nav button small{display:block;font-weight:400;font-size:.75rem;opacity:.8}
+nav button[aria-selected="true"]{background:var(--c);border-color:var(--c);color:#fff}
+#q{width:100%;margin:10px 0 8px;padding:12px 14px;border:2px solid var(--ln);border-radius:12px;background:var(--sf)}
+#chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+#chips button{flex:none;border:1px solid var(--ln);background:var(--sf);border-radius:99px;padding:5px 13px;font-size:.85rem;cursor:pointer}
+#chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+main{padding-bottom:16px}
+.cnt{color:var(--mu);font-size:.85rem;margin:12px 0 8px}
+#list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:14px;align-items:start}section{background:var(--sf);border:1px solid var(--ln);border-radius:12px;margin:0;overflow:hidden;box-shadow:0 1px 0 var(--ln)}
+section[data-c="agua"]{--ac:var(--agua)}section[data-c="desague"]{--ac:var(--desague)}section[data-c="luz"]{--ac:var(--luz)}section[data-c="caliente"]{--ac:var(--cal)}
+h2{margin:0;padding:11px 14px;font-size:1.02rem;font-weight:800;background:var(--ac);color:#fff;display:flex;justify-content:space-between;gap:8px}
+h2 small{font-weight:400;opacity:.85}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:11px 14px;border-top:1px solid var(--ln)}
+.row.on{background:color-mix(in srgb,var(--ac) 11%,var(--sf))}
+.m{font-weight:800;font-size:1.05rem}
+.m small,.pr small{display:block;font-weight:400;color:var(--mu);font-size:.78rem;line-height:1.3}
+.pr{text-align:right}.pr b{font-size:1.1rem}
+.ctl{grid-column:1/-1;display:flex;gap:8px;justify-content:flex-end;align-items:center}
+select{padding:8px 10px;border:1px solid var(--ln);border-radius:8px;background:var(--sf);max-width:62%}
+.u1{color:var(--mu);font-size:.85rem}
+.qty{display:inline-flex;border:1px solid var(--ln);border-radius:8px;overflow:hidden;align-items:center}
+.qty button{width:38px;height:36px;border:0;background:var(--bg);cursor:pointer;font-size:1.2rem}
+.qty input{width:56px;height:36px;border:0;border-inline:1px solid var(--ln);text-align:center;background:var(--sf)}
+.empty{padding:30px 0;color:var(--mu);text-align:center}
+#bar{position:fixed;left:0;right:0;bottom:0;z-index:9;background:var(--navy);color:#fff;padding:11px 0 calc(11px + env(safe-area-inset-bottom,0px))}
+#bar .w{display:flex;justify-content:space-between;align-items:center;gap:10px}
+#bar small{display:block;color:#b9c8d8}
+.go{border:0;border-radius:10px;background:var(--ac);color:#fff;font-weight:800;padding:12px 18px;cursor:pointer}
+#bar .go{background:#e8791a}
+#sheet{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.55);display:flex;align-items:flex-end;justify-content:center}
+.p{background:var(--sf);width:100%;max-width:600px;max-height:92%;overflow:auto;border-radius:16px 16px 0 0;padding:0 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.ph{position:sticky;top:0;background:var(--sf);display:flex;justify-content:space-between;align-items:center;padding:14px 0 8px;border-bottom:2px solid var(--ink)}
+.ph h3{margin:0;font-size:1.2rem}.ph small{color:var(--mu);font-weight:400;font-size:.85rem;margin-left:6px}
+.ph button{border:0;background:var(--bg);width:34px;height:34px;border-radius:50%;cursor:pointer}
+.ch{margin-top:14px;padding:6px 10px;border-radius:8px;background:var(--c);color:#fff;font-weight:800}
+.pn{margin:10px 0 2px;font-weight:800;font-size:.95rem}
+.ln{display:grid;grid-template-columns:1fr auto auto;gap:4px 10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--ln)}
+.lt b{display:block}.lt span{color:var(--mu);font-size:.8rem}
+.sub{font-weight:800;text-align:right;min-width:78px}
+.qty.s button{width:28px;height:28px;font-size:1rem}.qty.s span{min-width:30px;text-align:center;font-weight:600}
+.rm{grid-column:3;grid-row:1/3;border:0;background:none;color:var(--mu);cursor:pointer;display:none}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:1.35rem;padding:14px 0;border-top:2px solid var(--ink);margin-top:10px}
+.fm{background:var(--bg);border-radius:12px;padding:14px;margin-bottom:12px}
+.fm h4{margin:0 0 10px}.fm label{display:block;font-weight:600;font-size:.85rem;margin-bottom:10px}
+.fm input,.fm textarea{width:100%;margin-top:4px;padding:11px;border:1px solid var(--ln);border-radius:8px;background:var(--sf);resize:vertical;font-weight:400}
+#fe{color:#c0392b;margin:0;font-weight:600;font-size:.9rem}
+.acts{display:flex;gap:8px;flex-wrap:wrap}.acts button{flex:1;padding:12px;border-radius:10px;border:1px solid var(--ln);background:none;cursor:pointer;font-weight:600}
+.acts .wa{flex-basis:100%;background:#1fa855;border:0;color:#fff;font-size:1.05rem;font-weight:800}
+#gate{position:fixed;inset:0;z-index:50;background:var(--navy);display:grid;place-items:center;padding:20px}
+#gate div{background:var(--sf);border-radius:14px;padding:24px;max-width:360px;width:100%;border-top:6px solid var(--agua)}
+#gate h1{margin:0 0 6px;font-size:1.4rem}#gate p{margin:0 0 14px;color:var(--mu)}#gate input{width:100%;padding:12px;border:2px solid var(--ln);border-radius:10px;background:var(--bg);margin-bottom:10px}
+#gate .go{width:100%;background:var(--agua)}#err{color:#c0392b;margin:8px 0 0;font-size:.9rem}
+</style>
+</head>
+<body data-c="agua">
+<div class="hd"><div class="w hb"><img class="lg1" data-l1 alt="Posmart Homecenter"><span class="chip"><img data-l2 alt="Pavco Wavin"></span></div><div class="w ht"><h1>Catálogo mayorista</h1><p>Tuberías y accesorios Pavco para agua, agua caliente, desagüe y luz</p></div></div>
+<div class="ctrl"><div class="w"><nav id="tabs" role="tablist"></nav>
+<input id="q" type="search" placeholder="Buscar: codo 1/2 x 90 agua" aria-label="Buscar producto"><div id="chips"></div></div></div>
+<main class="w"><div class="cnt" id="cnt"></div><div id="list"></div></main>
+<footer class="ft" id="ft">Posmart Homecenter · Pedidos por WhatsApp 923 384 443 · Marca Pavco</footer>
+<div id="bar" hidden><div class="w"><div><b id="bn"></b><small id="bt"></small></div><button class="go" id="ver">Ver pedido</button></div></div>
+<div id="sheet" hidden><div class="p"><div class="ph"><h3>🛒 Tu pedido<small id="sc"></small></h3><button id="x" aria-label="Cerrar">✕</button></div>
+<div id="ls"></div><div class="tot"><span>Total</span><span id="tt"></span></div>
+<div class="fm"><h4>Datos para tu pedido</h4><label>RUC<input id="ruc" inputmode="numeric" maxlength="11" placeholder="11 dígitos"></label><label>Razón social<input id="rs" placeholder="Nombre de tu empresa"></label><label>Dirección de entrega<textarea id="dr" rows="2" placeholder="Calle, número, distrito, ciudad"></textarea></label><p id="fe" hidden></p></div>
+<div class="acts"><button class="wa" id="wa">Enviar pedido por WhatsApp</button><button id="cp">Copiar pedido</button><button id="cl">Vaciar pedido</button></div></div></div>
+<script type="module">
+let R;try{R=await(await fetch("productos.json",{cache:"no-store"})).json()}catch(e){document.body.innerHTML='<p style="padding:24px;font:16px system-ui">No se pudo cargar productos.json. Abre el catálogo desde su dirección de GitHub Pages, no desde el archivo.</p>';throw e}
+const STORE=R.config.tienda,WA=R.config.whatsapp,CO=["agua","caliente","desague","luz"];
+const D=R.productos.filter(p=>p.activo!==false).map(p=>[p.cat,p.grupo,p.producto,p.medida,+p.precio,(p.caja||p.bolsa||p.umv)?[p.caja||null,p.bolsa||null,p.umv||null]:null,p.descripcion||""]).sort((a,b)=>CO.indexOf(a[0])-CO.indexOf(b[0]));
+const CAT={agua:"Agua",caliente:"Agua caliente",desague:"Desagüe",luz:"Luz"},ICO={agua:"💧",caliente:"🔥",desague:"🚿",luz:"⚡"},COL={agua:"var(--agua)",caliente:"var(--cal)",desague:"var(--desague)",luz:"var(--luz)"};
+const UL={u:["und","und"],c:["caja","cajas"],b:["bolsa","bolsas"]};
+const $=s=>document.querySelector(s);
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[°"”″]/g,"").replace(/(^|\s)([1-6])\s+(\d\/\d)/g,"$1$2-$3").replace(/\s+/g," ").trim();
+const fmt=n=>n.toLocaleString("es-PE");
+const money=v=>"S/ "+v.toLocaleString("es-PE",{minimumFractionDigits:2,maximumFractionDigits:2});
+const I=D.map((a,i)=>{const e=a[5]||[],o={u:1},f=a[6]?[esc(a[6])]:[];
+  if(e[0]){o.c=e[0];f.push(`Caja: ${fmt(e[0])} und`)}
+  if(e[1]){if(e[0]&&e[0]%e[1]===0){o.b=e[0]/e[1];f.push(`${e[1]} ${e[1]===1?"bolsa":"bolsas"} de ${fmt(o.b)} und por caja`)}else f.push(`${e[1]} ${e[1]===1?"bolsa":"bolsas"} por caja`)}
+  if(e[2])f.push(`Paquete (UMV): ${e[2]} und`);
+  const n=`${a[2]} ${a[3]} ${CAT[a[0]]} - Pavco`.replace(/\s+/g," ");
+  return{i,c:a[0],g:a[1],p:a[2],m:a[3],pr:a[4],o,inf:f.join(" · "),n,h:norm(n+" "+a[1])}});
+let cat="agua",grp="Todos",q="";const cart={},sel={};
+const key=(i,u)=>i+"_"+u,price=(x,u)=>x.pr*x.o[u],word=(n,u)=>UL[u][n===1?0:1];
+const lines=()=>Object.keys(cart).map(k=>{const[i,u]=k.split("_");return{k,i:+i,u,n:cart[k],x:I[+i]}}).sort((a,b)=>a.i-b.i||a.u.localeCompare(b.u));
+const total=()=>lines().reduce((s,l)=>s+l.n*price(l.x,l.u),0);
+const STOP=new Set(["de","x","pavco","para","y","-"]);
+const ok=(x,T)=>T.every(t=>/^[\d\/-]+$/.test(t)?new RegExp("(^|\\s)"+t.replace(/[\/\-]/g,"\\$&")+"(?=\\s|$)").test(x.h):x.h.includes(t));
+function tabs(){$("#tabs").innerHTML=Object.keys(CAT).map(k=>`<button role="tab" style="--c:${COL[k]}" aria-selected="${k===cat&&!q}" data-k="${k}">${ICO[k]} ${CAT[k]}<small>${I.filter(x=>x.c===k).length} productos</small></button>`).join("")}
+function chips(){const gs=["Todos",...new Set(I.filter(x=>x.c===cat).map(x=>x.g))];$("#chips").innerHTML=q?"":gs.map(g=>`<button aria-pressed="${g===grp}" data-g="${esc(g)}">${esc(g)}</button>`).join("")}
+function rowHtml(x){const u=sel[x.i]||"u",n=cart[key(x.i,u)]||0,ks=Object.keys(x.o),any=ks.some(k=>cart[key(x.i,k)]);
+  const opts=ks.map(k=>`<option value="${k}"${k===u?" selected":""}>${k==="u"?"Unidad":(k==="c"?"Caja":"Bolsa")+" ("+fmt(x.o[k])+" und)"}</option>`).join("");
+  return`<div class="row${any?" on":""}" data-i="${x.i}"><div class="m">${esc(x.m||"Unidad")}${x.inf?`<small>${x.inf}</small>`:""}</div><div class="pr"><b>${money(price(x,u))}</b><small>${u==="u"?"por unidad":"por "+UL[u][0]}</small></div><div class="ctl">${ks.length>1?`<select aria-label="Unidad de medida">${opts}</select>`:`<span class="u1">Unidad</span>`}<span class="qty"><button data-a="-" aria-label="Quitar uno">−</button><input inputmode="numeric" value="${n||""}" placeholder="0" aria-label="Cantidad"><button data-a="+" aria-label="Agregar uno">+</button></span></div></div>`}
+function render(){
+  const T=norm(q).split(" ").filter(t=>t&&!STOP.has(t));
+  const items=T.length?I.filter(x=>ok(x,T)):I.filter(x=>x.c===cat&&(grp==="Todos"||x.g===grp));
+  $("#cnt").textContent=T.length?`${items.length} resultados en todo el catálogo`:`${items.length} productos`;
+  let h="",last="";
+  for(const x of items){const k=x.c+x.p;if(k!==last){if(last)h+="</section>";h+=`<section data-c="${x.c}"><h2>${esc(x.p)}<small>${ICO[x.c]} ${CAT[x.c]}</small></h2>`;last=k}h+=rowHtml(x)}
+  if(last)h+="</section>";
+  $("#list").innerHTML=h||`<p class="empty">No hay productos con “${esc(q)}”. Prueba con menos palabras.</p>`;
+}
+function add(i,u,n){n=Math.max(0,Math.min(99999,n|0));const k=key(i,u);n?cart[k]=n:delete cart[k];const r=document.querySelector(`.row[data-i="${i}"]`);if(r)r.outerHTML=rowHtml(I[i]);bar()}
+function bar(){const L=lines();$("#bar").hidden=!L.length;$("#bn").textContent=L.length+(L.length===1?" línea de pedido":" líneas de pedido");$("#bt").textContent="Total "+money(total());if(!$("#sheet").hidden)sheet()}
+function sheet(){const L=lines();if(!L.length){$("#sheet").hidden=true;return}
+  let h="",c="",p="";
+  for(const l of L){const x=l.x,m=x.o[l.u];if(x.c!==c){c=x.c;p="";h+=`<div class="ch" style="--c:${COL[c]}">${ICO[c]} ${CAT[c]}</div>`}
+    if(x.p!==p){p=x.p;h+=`<div class="pn">${esc(x.p)}</div>`}
+    h+=`<div class="ln"><div class="lt"><b>${esc(x.m||"Unidad")}</b><span>${fmt(l.n)} ${word(l.n,l.u)}${l.u!=="u"?` (${fmt(l.n*m)} und)`:""} × ${money(x.pr*m)} c/${l.u==="u"?"u":UL[l.u][0]}</span></div><div class="sub">${money(l.n*x.pr*m)}</div><span class="qty s"><button data-k="${l.k}" data-a="-" aria-label="Quitar uno">−</button><span>${l.n}</span><button data-k="${l.k}" data-a="+" aria-label="Agregar uno">+</button></span></div>`}
+  $("#ls").innerHTML=h;$("#tt").textContent=money(total());$("#sc").textContent=`${L.length} ${L.length===1?"línea":"líneas"}`}
+const val=id=>$("#"+id).value.trim();
+function chk(){let e="";if(!/^\d{11}$/.test(val("ruc")))e="El RUC debe tener 11 dígitos.";else if(!val("rs"))e="Escribe la razón social.";else if(!val("dr"))e="Escribe la dirección de entrega.";$("#fe").textContent=e;$("#fe").hidden=!e;return!e}
+const pad=(s,n,r)=>r?String(s).padStart(n):String(s).padEnd(n);
+const f2=v=>v.toLocaleString("es-PE",{minimumFractionDigits:2,maximumFractionDigits:2});
+function tbl(rows){const H=["Medida","Cant.","Und","Importe S/"],all=[H,...rows],w=H.map((_,j)=>Math.max(...all.map(r=>r[j].length)));
+  const ln=r=>r.map((c,j)=>pad(c,w[j],j>1)).join(" | ");return [ln(H),w.map(n=>"-".repeat(n)).join("-+-"),...rows.map(ln)].join("\n")}
+function msg(){const L=lines(),LN="━━━━━━━━━━━━",sub={};
+  let t=`*PEDIDO MAYORISTA*\nPosmart Homecenter · Marca Pavco\nFecha: ${new Date().toLocaleDateString("es-PE")}\n\n*DATOS DEL CLIENTE*\nRUC: ${val("ruc")}\nRazón social: ${val("rs")}\nDirección: ${val("dr")}\n`,c="",p="",rows=[];
+  const flush=()=>{if(rows.length){t+="```\n"+tbl(rows)+"\n```\n";rows=[]}};
+  for(const l of L){const x=l.x,m=x.o[l.u];
+    if(x.c!==c){flush();c=x.c;p="";t+=`\n${LN}\n${ICO[c]} *${CAT[c].toUpperCase()}*\n`}
+    if(x.p!==p){flush();p=x.p;t+=`\n▪ *${x.p}*\n`}
+    rows.push([x.m||"Unidad",`${fmt(l.n)} ${word(l.n,l.u)}`,fmt(l.n*m),f2(l.n*x.pr*m)]);sub[c]=(sub[c]||0)+l.n*x.pr*m}
+  flush();
+  return t+`\n${LN}\n*RESUMEN*\n`+Object.keys(sub).map(k=>`${ICO[k]} ${CAT[k]}: ${money(sub[k])}`).join("\n")+`\nLíneas: ${L.length}\n*TOTAL: ${money(total())}*`}
+$("#tabs").onclick=e=>{const b=e.target.closest("button");if(!b)return;cat=b.dataset.k;grp="Todos";q="";$("#q").value="";document.body.dataset.c=cat;tabs();chips();render()};
+$("#chips").onclick=e=>{const b=e.target.closest("button");if(!b)return;grp=b.dataset.g;chips();render()};
+$("#q").oninput=e=>{q=e.target.value;tabs();chips();render()};
+$("#list").onclick=e=>{const b=e.target.closest("button");if(!b)return;const i=+b.closest(".row").dataset.i,u=sel[i]||"u";add(i,u,(cart[key(i,u)]||0)+(b.dataset.a==="+"?1:-1))};
+$("#list").onchange=e=>{const r=e.target.closest(".row");if(!r)return;const i=+r.dataset.i;if(e.target.tagName==="SELECT"){sel[i]=e.target.value;r.outerHTML=rowHtml(I[i])}else add(i,sel[i]||"u",parseInt(e.target.value)||0)};
+$("#ls").onclick=e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k,[i,u]=k.split("_");add(+i,u,(cart[k]||0)+(b.dataset.a==="+"?1:-1))};
+$("#ver").onclick=()=>{$("#sheet").hidden=false;sheet()};
+$("#x").onclick=()=>$("#sheet").hidden=true;
+$("#sheet").onclick=e=>{if(e.target.id==="sheet")$("#sheet").hidden=true};
+$("#cl").onclick=()=>{for(const k in cart)delete cart[k];$("#sheet").hidden=true;bar();render()};
+$("#wa").onclick=()=>{if(chk())window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg())}`,"_blank")};
+$("#cp").onclick=async()=>{if(!chk())return;try{await navigator.clipboard.writeText(msg());$("#cp").textContent="Copiado"}catch(e){$("#cp").textContent="No se pudo copiar"}setTimeout(()=>$("#cp").textContent="Copiar pedido",1800)};
+for(const id of["ruc","rs","dr"])$("#"+id).oninput=()=>{try{localStorage.setItem("cli",JSON.stringify({ruc:val("ruc"),rs:val("rs"),dr:val("dr")}))}catch(e){}};
+try{const c=JSON.parse(localStorage.getItem("cli")||"{}");$("#ruc").value=c.ruc||"";$("#rs").value=c.rs||"";$("#dr").value=c.dr||""}catch(e){}
+document.querySelectorAll("[data-l1]").forEach(i=>i.src="logo-posmart.webp");document.querySelectorAll("[data-l2]").forEach(i=>i.src="logo-pavco.webp");$("#ft").textContent=`${STORE} · Pedidos por WhatsApp +${WA.replace(/^(\d{2})(\d{3})(\d{3})(\d{3})$/,"$1 $2 $3 $4")} · Marca Pavco`;document.title=STORE+" · Catálogo mayorista Pavco";
+tabs();chips();render();
+</script>
+</body>
+</html>
