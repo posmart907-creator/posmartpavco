@@ -152,7 +152,7 @@ const RGB={agua:[27,109,179],caliente:[212,53,43],desague:[92,104,115],luz:[207,
 const loadImg=src=>new Promise((ok,no)=>{const i=new Image();i.onload=()=>{const c=document.createElement("canvas");c.width=i.naturalWidth;c.height=i.naturalHeight;c.getContext("2d").drawImage(i,0,0);ok({d:c.toDataURL("image/png"),r:i.naturalWidth/i.naturalHeight})};i.onerror=no;i.src=src});
 async function pdf(){
   if(!window.jspdf)return alert("No se pudo cargar el generador de PDF. Revisa tu conexión a internet e inténtalo de nuevo.");
-  const L=lines();if(!L.length)return;
+  const L=lines();if(!L.length||!chk())return;
   const[A,B]=await Promise.all([loadImg("logo-posmart.webp"),loadImg("logo-pavco.webp")]);
   const{jsPDF}=window.jspdf,doc=new jsPDF({unit:"mm",format:"a4"}),W=210,M=12,NAVY=[11,42,74],WAF="+"+WA.replace(/^(\d{2})(\d{3})(\d{3})(\d{3})$/,"$1 $2 $3 $4");
   const head=()=>{doc.setFillColor(...NAVY);doc.rect(0,0,W,24,"F");doc.addImage(A.d,"PNG",M,6.5,11*A.r,11,"lgA","FAST");
@@ -160,7 +160,7 @@ async function pdf(){
   let y=36;
   doc.setTextColor(...NAVY);doc.setFont("helvetica","bold");doc.setFontSize(18);doc.text("PEDIDO MAYORISTA",M,y);
   doc.setFont("helvetica","normal");doc.setFontSize(10);doc.setTextColor(90,105,119);doc.text("Fecha: "+new Date().toLocaleDateString("es-PE"),W-M,y,{align:"right"});y+=7;
-  const cl=[["RUC",val("ruc")],["Razón social",val("rs")],["Dirección",val("dr")]].filter(x=>x[1]).map(x=>[x[0],doc.splitTextToSize(x[1],W-2*M-40)]);
+  const cl=[["RUC",val("ruc")],["Razón social",val("rs")],["Dirección",val("dr")]].map(x=>[x[0],doc.splitTextToSize(x[1],W-2*M-40)]);
   if(cl.length){const h=cl.reduce((s,x)=>s+x[1].length*5,0)+6;doc.setDrawColor(216,223,230);doc.setFillColor(238,242,246);doc.roundedRect(M,y,W-2*M,h,2,2,"FD");doc.setFontSize(10);doc.setTextColor(19,32,43);let yy=y+7;
     for(const[k,v]of cl){doc.setFont("helvetica","bold");doc.text(k+":",M+4,yy);doc.setFont("helvetica","normal");doc.text(v,M+34,yy);yy+=v.length*5}y+=h+7}
   const S=s=>s.replace(/²/g,"2");
